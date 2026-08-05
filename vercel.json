@@ -1,18 +1,49 @@
 {
+  "version": 2,
+  "framework": null,
   "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.9.0"
-    }
+    "api/index.php": { "runtime": "vercel-php@0.9.0" }
   },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
-    }
+    { "src": "/build/(.*)", "dest": "/public/build/$1" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
   "build": {
     "env": {
       "COMPOSER_ALLOW_SUPERUSER": "1"
     }
+  },
+  "env": {
+    "APP_NAME": "Laravel",
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://your-project-name.vercel.app",
+    "APP_KEY": "base64:50odsilG2d1sojbmYR8Zj4lghbRQ7bKkBrJfH86Xjzo=",
+
+    "APP_CONFIG_CACHE": "/tmp/config.php",
+    "APP_EVENTS_CACHE": "/tmp/events.php",
+    "APP_PACKAGES_CACHE": "/tmp/packages.php",
+    "APP_ROUTES_CACHE": "/tmp/routes.php",
+    "APP_SERVICES_CACHE": "/tmp/services.php",
+    "VIEW_COMPILED_PATH": "/tmp",
+
+    "DB_CONNECTION": "mongodb",
+    "MONGODB_URI": "mongodb+srv://YOUR_NEW_USER:YOUR_NEW_PASSWORD@cluster1.avhqttg.mongodb.net/?appName=Cluster1",
+    "MONGODB_DATABASE": "am_printing",
+
+    "SESSION_DRIVER": "cookie",
+    "CACHE_STORE": "array",
+    "QUEUE_CONNECTION": "sync",
+    "LOG_CHANNEL": "stderr",
+
+    "MAIL_MAILER": "log",
+
+    "CLOUDINARY_URL": "cloudinary://YOUR_NEW_KEY:YOUR_NEW_SECRET@dctls9z2s",
+    "CLOUDINARY_KEY": "YOUR_NEW_KEY",
+    "CLOUDINARY_SECRET": "YOUR_NEW_SECRET",
+    "CLOUDINARY_CLOUD_NAME": "dctls9z2s",
+    "CLOUDINARY_SECURE": "true"
   }
 }
