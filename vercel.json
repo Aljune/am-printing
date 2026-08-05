@@ -5,6 +5,15 @@
     }
   },
   "routes": [
-    { "src": "/(.*)", "dest": "/api/index.php" }
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/index.php",
+      "use": "vercel-php@0.9.0"
+    }
   ]
 }
